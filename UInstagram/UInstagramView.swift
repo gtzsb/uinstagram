@@ -59,7 +59,7 @@ struct StoriesView: View {
                 VStack {
                     ZStack(alignment: .bottomTrailing) {
                         Image("profile00").clipShape(Circle())
-                        Image(systemName: "plus.circle.fill").foregroundColor(.blue).background(Color.white).font(.body).clipShape(Circle())
+                        Image(systemName: "plus.circle.fill").foregroundColor(.blue).background(Color.white).font(.body).clipShape(Circle()).overlay(Circle().stroke(Color.white, lineWidth: 1))
                     }
                     Text("Your story")
                 }
