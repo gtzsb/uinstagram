@@ -41,6 +41,8 @@ struct Post: Identifiable {
     var numberOfLikes: Int = Int.random(in: 1 ..< 1000)
     var location: String?
     var description: String
+    var liked = Bool.random()
+    var bookmarked = Bool.random()
 }
 
 struct Profile: Identifiable {

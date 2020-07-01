@@ -100,7 +100,7 @@ struct PostView: View {
             Image(post.photo).resizable().scaledToFit().onTapGesture {
                 print("Tapped \(self.post)")
             }
-            Actions().padding(.horizontal)
+            Actions(post: post).padding(.horizontal)
             Text("\(post.numberOfLikes) likes").font(.footnote).fontWeight(.semibold).padding(.horizontal)
             (
                 Text(post.author.name).fontWeight(.semibold)
@@ -132,9 +132,11 @@ struct PostView: View {
     }
     
     struct Actions: View {
+        var post: Post
+        
         var body: some View {
             HStack(alignment: .center, spacing: 20) {
-                Image(systemName: "heart").onTapGesture {
+                Image(systemName: self.post.liked ? "heart.fill" : "heart").foregroundColor(self.post.liked ? Color(UIColor.systemRed) : .primary).onTapGesture {
                     print("Tapped heart")
                 }
                 Image(systemName: "bubble.right").onTapGesture {
@@ -144,7 +146,7 @@ struct PostView: View {
                     print("Tapped paperplane")
                 }
                 Spacer()
-                Image(systemName: "bookmark").onTapGesture {
+                Image(systemName: self.post.bookmarked ? "bookmark.fill" : "bookmark").onTapGesture {
                     print("Tapped bookmark")
                 }
             }
