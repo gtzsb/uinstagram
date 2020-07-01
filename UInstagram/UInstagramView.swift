@@ -15,7 +15,9 @@ struct UInstagramView: View {
                 TabsView()
             }
             .navigationBarTitle("UInstagram", displayMode: .inline)
-            .navigationBarItems(leading: Button(action: { print("Tapped camera") }) { Image(systemName: "camera")}, trailing: Button(action: { print("Tapped paperplane") }) { Image(systemName: "paperplane")})
+            .navigationBarItems(leading: Button(action: { print("Tapped camera") }) { Image(systemName: "camera")}
+            .foregroundColor(.primary), trailing: Button(action: { print("Tapped paperplane") }) { Image(systemName: "paperplane")}
+            .foregroundColor(.primary))
         }
     }
 }
