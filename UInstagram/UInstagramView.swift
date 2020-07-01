@@ -86,7 +86,7 @@ struct PostsView: View {
             StoriesView().listRowInsets(EdgeInsets())
             ForEach(posts) { post in
                 PostView(post: post)
-            }
+            }.listRowInsets(EdgeInsets())
         }
     }
 }
@@ -96,16 +96,16 @@ struct PostView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Author(post: post)
+            Author(post: post).padding(.horizontal).padding(.top)
             Image(post.photo).resizable().scaledToFit().onTapGesture {
                 print("Tapped \(self.post)")
             }
-            Actions()
-            Text("\(post.numberOfLikes) likes").font(.footnote).fontWeight(.semibold)
+            Actions().padding(.horizontal)
+            Text("\(post.numberOfLikes) likes").font(.footnote).fontWeight(.semibold).padding(.horizontal)
             (
                 Text(post.author.name).fontWeight(.semibold)
                     + Text(" \(post.description)")
-                ).font(.footnote)
+                ).font(.footnote).padding(.horizontal).padding(.bottom)
         }
     }
     
