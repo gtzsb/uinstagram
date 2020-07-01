@@ -95,7 +95,7 @@ struct PostView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Author(post: post)
-            Image(post.photo).resizable().scaledToFit().background(Color.red).onTapGesture {
+            Image(post.photo).resizable().scaledToFit().onTapGesture {
                 print("Tapped \(self.post)")
             }
             Actions()
