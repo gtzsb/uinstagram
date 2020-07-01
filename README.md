@@ -1,6 +1,8 @@
 # uinstagram
 [Instagram](https://www.instagram.com) clone in [SwiftUI](https://developer.apple.com/xcode/swiftui/), for learning purpose.
 
+![App Image](images/UInstagram.png?)
+
 ## Credits
 App icon: [Tahsin Tahil](https://www.iconfinder.com/icons/381384/instagram_logo_icon).
 
