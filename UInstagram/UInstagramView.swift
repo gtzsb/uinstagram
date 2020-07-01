@@ -72,7 +72,7 @@ struct StoriesView: View {
                     }
                 }
             }
-            .padding(.vertical)
+            .padding(.top)
             .font(.caption)
         }
     }
@@ -81,9 +81,15 @@ struct StoriesView: View {
 struct PostsView: View {
     var posts: Array<Post> = DataRepository.posts
     
+    // Hide separator between list items
+    init() {
+        UITableView.appearance().separatorColor = .clear
+    }
+    
     var body: some View {
         List {
             StoriesView().listRowInsets(EdgeInsets())
+            Divider().padding(.zero).listRowInsets(EdgeInsets())
             ForEach(posts) { post in
                 PostView(post: post)
             }.listRowInsets(EdgeInsets())
@@ -96,7 +102,7 @@ struct PostView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Author(post: post).padding(.horizontal).padding(.top)
+            Author(post: post).padding(.horizontal)
             Image(post.photo).resizable().scaledToFit().onTapGesture {
                 print("Tapped \(self.post)")
             }
