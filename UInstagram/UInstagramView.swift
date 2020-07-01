@@ -51,7 +51,7 @@ struct TabsView: View {
 
 struct StoriesView: View {
     var profiles: Array<Profile> = DataRepository.profiles
-    let gradientColors = Gradient(colors: [.red, .blue])
+    private let paddingValue: CGFloat = 3
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -59,13 +59,13 @@ struct StoriesView: View {
                 VStack {
                     ZStack(alignment: .bottomTrailing) {
                         Image("profile00").clipShape(Circle())
-                        Image(systemName: "plus.circle.fill").foregroundColor(.blue).background(Color.white).font(.body).clipShape(Circle()).overlay(Circle().stroke(Color.white, lineWidth: 1))
-                    }
+                        Image(systemName: "plus.circle.fill").foregroundColor(Color(UIColor.systemBlue)).background(Color(UIColor.systemBackground)).font(.body).clipShape(Circle()).overlay(Circle().stroke(Color(UIColor.systemBackground), lineWidth: 1))
+                    }.padding(paddingValue)
                     Text("Your story")
                 }
                 ForEach(profiles) { profile in
                     VStack {
-                        Image(profile.photo).clipShape(Circle()).overlay(Circle().stroke(Color.white, lineWidth: 4)).overlay(Circle().stroke(Color.red, lineWidth: 2))
+                        Image(profile.photo).clipShape(Circle()).padding(self.paddingValue).overlay(Circle().stroke(Color(UIColor.systemRed), lineWidth: self.paddingValue - 1))
                         Text(profile.name)
                     }
                 }
