@@ -109,6 +109,13 @@ struct PostView: View {
     
     struct Author: View {
         var post: Post
+        private var hasLocation: Bool {
+            if let _ = post.location {
+                return true
+            } else {
+                return false
+            }
+        }
         
         var body: some View {
             HStack(alignment: .center) {
@@ -117,7 +124,9 @@ struct PostView: View {
                     Text(post.author.name).font(.subheadline).fontWeight(.semibold).onTapGesture {
                         print("Tapped \(self.post.author)")
                     }
-                    Text(post.location ?? "").font(.caption)
+                    if hasLocation {
+                        Text(post.location!).font(.caption)
+                    }
                 }
                 Spacer()
                 Image(systemName: "ellipsis").onTapGesture {
