@@ -62,9 +62,9 @@ struct StoriesView: View {
                     ZStack(alignment: .bottomTrailing) {
                         Image("profile00").clipShape(Circle())
                         Image(systemName: "plus.circle.fill").foregroundColor(Color(UIColor.systemBlue)).background(Color(UIColor.systemBackground)).font(.body).clipShape(Circle()).overlay(Circle().stroke(Color(UIColor.systemBackground), lineWidth: 1))
-                    }.padding(paddingValue)
+                        }.padding(paddingValue).fixedSize()
                     Text("Your story")
-                }
+                }.padding(.leading)
                 ForEach(profiles) { profile in
                     VStack {
                         Image(profile.photo).clipShape(Circle()).padding(self.paddingValue).overlay(Circle().stroke(Color(UIColor.systemRed), lineWidth: self.paddingValue - 1))
@@ -83,7 +83,7 @@ struct PostsView: View {
     
     var body: some View {
         List {
-            StoriesView()
+            StoriesView().listRowInsets(EdgeInsets())
             ForEach(posts) { post in
                 PostView(post: post)
             }
