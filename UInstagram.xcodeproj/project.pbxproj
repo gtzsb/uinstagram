@@ -15,8 +15,13 @@
 		BEA7738224AB830D005A8D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7738124AB830D005A8D9E /* Assets.xcassets */; };
 		BEA7738524AB830D005A8D9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7738424AB830D005A8D9E /* Preview Assets.xcassets */; };
 		BEA7738824AB830D005A8D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7738624AB830D005A8D9E /* LaunchScreen.storyboard */; };
+		BEB270EB24ADCCCE0078AFBE /* AuthorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB270EA24ADCCCE0078AFBE /* AuthorRow.swift */; };
+		BEB270ED24ADCD7D0078AFBE /* ActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB270EC24ADCD7D0078AFBE /* ActionsRow.swift */; };
 		BEFB4A8324ADB3D400C051B7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB4A8224ADB3D400C051B7 /* Post.swift */; };
 		BEFB4A8524ADB3FB00C051B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB4A8424ADB3FB00C051B7 /* Profile.swift */; };
+		BEFB4A8824ADB8FC00C051B7 /* PostsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB4A8724ADB8FC00C051B7 /* PostsList.swift */; };
+		BEFB4A8A24ADB97500C051B7 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB4A8924ADB97500C051B7 /* PostDetail.swift */; };
+		BEFB4A9024ADBA4900C051B7 /* StoriesScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB4A8F24ADBA4900C051B7 /* StoriesScroll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +35,13 @@
 		BEA7738424AB830D005A8D9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEA7738724AB830D005A8D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA7738924AB830D005A8D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB270EA24ADCCCE0078AFBE /* AuthorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRow.swift; sourceTree = "<group>"; };
+		BEB270EC24ADCD7D0078AFBE /* ActionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsRow.swift; sourceTree = "<group>"; };
 		BEFB4A8224ADB3D400C051B7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BEFB4A8424ADB3FB00C051B7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BEFB4A8724ADB8FC00C051B7 /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsList.swift; sourceTree = "<group>"; };
+		BEFB4A8924ADB97500C051B7 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		BEFB4A8F24ADBA4900C051B7 /* StoriesScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesScroll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				BEA7737F24AB830D005A8D9E /* UInstagramView.swift */,
+				BEFB4A8724ADB8FC00C051B7 /* PostsList.swift */,
+				BEFB4A8924ADB97500C051B7 /* PostDetail.swift */,
+				BEFB4A8F24ADBA4900C051B7 /* StoriesScroll.swift */,
+				BEB270EA24ADCCCE0078AFBE /* AuthorRow.swift */,
+				BEB270EC24ADCD7D0078AFBE /* ActionsRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,10 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFB4A9024ADBA4900C051B7 /* StoriesScroll.swift in Sources */,
 				BEA7737C24AB830D005A8D9E /* AppDelegate.swift in Sources */,
 				BEFB4A8524ADB3FB00C051B7 /* Profile.swift in Sources */,
+				BEB270ED24ADCD7D0078AFBE /* ActionsRow.swift in Sources */,
+				BEB270EB24ADCCCE0078AFBE /* AuthorRow.swift in Sources */,
 				BEA7737E24AB830D005A8D9E /* SceneDelegate.swift in Sources */,
 				BE903B1924ABA8F600DB57E3 /* DataRepository.swift in Sources */,
+				BEFB4A8A24ADB97500C051B7 /* PostDetail.swift in Sources */,
+				BEFB4A8824ADB8FC00C051B7 /* PostsList.swift in Sources */,
 				BEA7738024AB830D005A8D9E /* UInstagramView.swift in Sources */,
 				BEFB4A8324ADB3D400C051B7 /* Post.swift in Sources */,
 			);
