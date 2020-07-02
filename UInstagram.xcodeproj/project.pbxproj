@@ -15,6 +15,8 @@
 		BEA7738224AB830D005A8D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7738124AB830D005A8D9E /* Assets.xcassets */; };
 		BEA7738524AB830D005A8D9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7738424AB830D005A8D9E /* Preview Assets.xcassets */; };
 		BEA7738824AB830D005A8D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7738624AB830D005A8D9E /* LaunchScreen.storyboard */; };
+		BEFB4A8324ADB3D400C051B7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB4A8224ADB3D400C051B7 /* Post.swift */; };
+		BEFB4A8524ADB3FB00C051B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB4A8424ADB3FB00C051B7 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		BEA7738424AB830D005A8D9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEA7738724AB830D005A8D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA7738924AB830D005A8D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEFB4A8224ADB3D400C051B7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		BEFB4A8424ADB3FB00C051B7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,14 +65,15 @@
 		BEA7737A24AB830D005A8D9E /* UInstagram */ = {
 			isa = PBXGroup;
 			children = (
+				BEA7738924AB830D005A8D9E /* Info.plist */,
 				BEA7737B24AB830D005A8D9E /* AppDelegate.swift */,
+				BE903B1824ABA8F600DB57E3 /* DataRepository.swift */,
 				BEA7737D24AB830D005A8D9E /* SceneDelegate.swift */,
-				BEA7737F24AB830D005A8D9E /* UInstagramView.swift */,
 				BEA7738124AB830D005A8D9E /* Assets.xcassets */,
 				BEA7738624AB830D005A8D9E /* LaunchScreen.storyboard */,
-				BEA7738924AB830D005A8D9E /* Info.plist */,
+				BEFB4A8024ADB39C00C051B7 /* Views */,
+				BEFB4A8124ADB3A800C051B7 /* Models */,
 				BEA7738324AB830D005A8D9E /* Preview Content */,
-				BE903B1824ABA8F600DB57E3 /* DataRepository.swift */,
 			);
 			path = UInstagram;
 			sourceTree = "<group>";
@@ -79,6 +84,23 @@
 				BEA7738424AB830D005A8D9E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BEFB4A8024ADB39C00C051B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEA7737F24AB830D005A8D9E /* UInstagramView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEFB4A8124ADB3A800C051B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEFB4A8224ADB3D400C051B7 /* Post.swift */,
+				BEFB4A8424ADB3FB00C051B7 /* Profile.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA7737C24AB830D005A8D9E /* AppDelegate.swift in Sources */,
+				BEFB4A8524ADB3FB00C051B7 /* Profile.swift in Sources */,
 				BEA7737E24AB830D005A8D9E /* SceneDelegate.swift in Sources */,
 				BE903B1924ABA8F600DB57E3 /* DataRepository.swift in Sources */,
 				BEA7738024AB830D005A8D9E /* UInstagramView.swift in Sources */,
+				BEFB4A8324ADB3D400C051B7 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

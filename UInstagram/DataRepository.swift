@@ -33,20 +33,3 @@ struct DataRepository {
         profiles[Int.random(in: 0 ..< profiles.count)]
     }
 }
-
-struct Post: Identifiable {
-    var id = UUID()
-    var photo: String
-    var author: Profile
-    var numberOfLikes: Int = Int.random(in: 1 ..< 1000)
-    var location: String?
-    var description: String
-    var liked = Bool.random()
-    var bookmarked = Bool.random()
-}
-
-struct Profile: Identifiable {
-    var id = UUID()
-    var name: String
-    var photo: String
-}
