@@ -13,26 +13,46 @@ struct ActionsRow: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            Image(systemName: self.post.liked ? "heart.fill" : "heart").foregroundColor(self.post.liked ? Color(UIColor.systemRed) : .primary).onTapGesture {
-                print("Tapped heart")
+            Image(systemName: self.post.liked ? "heart.fill" : "heart")
+                .foregroundColor(self.post.liked ? Color(UIColor.systemRed) : .primary)
+                .onTapGesture {
+                    print("Tapped heart")
             }
-            Image(systemName: "bubble.right").onTapGesture {
-                print("Tapped bubble")
+            
+            Image(systemName: "bubble.right")
+                .onTapGesture {
+                    print("Tapped bubble")
             }
-            Image(systemName: "paperplane").onTapGesture {
-                print("Tapped paperplane")
+            
+            Image(systemName: "paperplane")
+                .onTapGesture {
+                    print("Tapped paperplane")
             }
+            
             Spacer()
-            Image(systemName: self.post.bookmarked ? "bookmark.fill" : "bookmark").onTapGesture {
-                print("Tapped bookmark")
+            
+            Image(systemName: self.post.bookmarked ? "bookmark.fill" : "bookmark")
+                .onTapGesture {
+                    print("Tapped bookmark")
             }
-        }.padding(.horizontal)
+        }
+        .padding(.horizontal)
     }
 }
 
 struct ActionsRow_Previews: PreviewProvider {
     static var posts: Array<Post> = DataRepository.posts
     static var previews: some View {
-        ActionsRow(post: posts[0])
+        Group {
+            ActionsRow(post: posts[0])
+                .padding()
+            ActionsRow(post: posts[0])
+                .padding()
+                .colorScheme(.dark)
+                .background(Color.black)
+            
+        }
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Actions Row")
     }
 }

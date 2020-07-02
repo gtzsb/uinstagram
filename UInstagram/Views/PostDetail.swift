@@ -14,15 +14,28 @@ struct PostDetail: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             AuthorRow(post: post)
-            Image(post.photo).resizable().scaledToFit().onTapGesture {
-                print("Tapped \(self.post)")
+            Image(post.photo)
+                .resizable()
+                .scaledToFit()
+                .onTapGesture {
+                    print("Tapped \(self.post)")
             }
+            
             ActionsRow(post: post)
-            Text("\(post.numberOfLikes) likes").font(.footnote).fontWeight(.semibold).padding(.horizontal)
+            
+            Text("\(post.numberOfLikes) likes")
+                .font(.footnote)
+                .fontWeight(.semibold)
+                .padding(.horizontal)
+            
             (
-                Text(post.author.name).fontWeight(.semibold)
+                Text(post.author.name)
+                    .fontWeight(.semibold)
                     + Text(" \(post.description)")
-                ).font(.footnote).padding(.horizontal).padding(.bottom)
+                )
+                .font(.footnote)
+                .padding(.horizontal)
+                .padding(.bottom)
         }
     }
 }
@@ -30,6 +43,14 @@ struct PostDetail: View {
 struct PostDetail_Previews: PreviewProvider {
     static var posts: Array<Post> = DataRepository.posts
     static var previews: some View {
-        PostDetail(post: posts[0])
+        
+        Group {
+            PostDetail(post: posts[0])
+            PostDetail(post: posts[0])
+                .colorScheme(.dark)
+                .background(Color.black)
+        }
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Post Detail")
     }
 }
