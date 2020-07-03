@@ -18,10 +18,21 @@ struct StoriesScroll: View {
                 VStack {
                     ZStack(alignment: .bottomTrailing) {
                         Image("profile00").circleShaped()
-                        Image(systemName: "plus.circle.fill").foregroundColor(.systemBlue).background(Color.systemBackground).font(.body).clipShape(Circle()).overlay(Circle().stroke(Color.systemBackground, lineWidth: 1))
-                    }.padding(paddingValue)
-                    Text("Your story").fixedSize()
-                }.padding(.leading)
+                        
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundColor(.systemBlue)
+                            .background(Color.systemBackground)
+                            .font(.body)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.systemBackground, lineWidth: 1))
+                    }
+                    .padding(paddingValue)
+                    
+                    Text("Your story")
+                        .fixedSize()
+                }
+                .padding(.leading)
+                
                 ForEach(profiles) { profile in
                     VStack {
                         Image(profile.photo).circleShapedWithGradientBorder()
@@ -37,6 +48,13 @@ struct StoriesScroll: View {
 
 struct StoriesScroll_Previews: PreviewProvider {
     static var previews: some View {
-        StoriesScroll()
+        Group {
+            StoriesScroll()
+            StoriesScroll()
+                .colorScheme(.dark)
+                .background(Color.black)
+        }
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Stories Scroll")
     }
 }

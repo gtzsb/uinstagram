@@ -18,17 +18,30 @@ struct PostsList: View {
     
     var body: some View {
         List {
-            StoriesScroll().listRowInsets(EdgeInsets())
-            Divider().padding(.zero).listRowInsets(EdgeInsets())
+            StoriesScroll()
+                .listRowInsets(EdgeInsets())
+            
+            Divider()
+                .padding(.zero)
+                .listRowInsets(EdgeInsets())
+            
             ForEach(posts) { post in
                 PostDetail(post: post)
-            }.listRowInsets(EdgeInsets())
+            }
+            .listRowInsets(EdgeInsets())
         }
     }
 }
 
 struct PostsList_Previews: PreviewProvider {
     static var previews: some View {
-        PostsList()
+        Group {
+            PostsList()
+            PostsList()
+                .colorScheme(.dark)
+                .background(Color.black)
+        }
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Posts List")
     }
 }

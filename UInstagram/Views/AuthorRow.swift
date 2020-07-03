@@ -14,18 +14,28 @@ struct AuthorRow: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            Image(post.author.photo).clipShape(Circle())
+            Image(post.author.photo)
+                .clipShape(Circle())
+            
             VStack(alignment: .leading) {
-                Text(post.author.name).font(.subheadline).fontWeight(.semibold).onTapGesture {
-                    print("Tapped \(self.post.author)")
+                Text(post.author.name)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .onTapGesture {
+                        print("Tapped \(self.post.author)")
                 }
+                
                 post.location.map { location in
-                    Text(location).font(.caption)
+                    Text(location)
+                        .font(.caption)
                 }
             }
+            
             Spacer()
-            Image(systemName: "ellipsis").onTapGesture {
-                self.showActionSheet = true
+            
+            Image(systemName: "ellipsis")
+                .onTapGesture {
+                    self.showActionSheet = true
             }
         }
         .actionSheet(isPresented: $showActionSheet) {
@@ -38,13 +48,21 @@ struct AuthorRow: View {
                 .default(Text("Unfollow")),
                 .cancel()
             ])
-        }.padding(.horizontal)
+        }
+        .padding(.horizontal)
     }
 }
 
 struct AuthorRow_Previews: PreviewProvider {
     static var posts: Array<Post> = DataRepository.posts
     static var previews: some View {
-        AuthorRow(post: posts[0])
+        Group {
+            AuthorRow(post: posts[0])
+            AuthorRow(post: posts[0])
+                .colorScheme(.dark)
+                .background(Color.black)
+        }
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Author Row")
     }
 }
