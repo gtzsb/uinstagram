@@ -9,19 +9,5 @@
 import SwiftUI
 
 extension Color {
-    public static var systemBackground: Color {
-        Color(UIColor.systemBackground)
-    }
-    
-    public static var systemBlue: Color {
-        Color(UIColor.systemBlue)
-    }
-    
-    public static var systemOrange: Color {
-        Color(UIColor.systemOrange)
-    }
-    
-    public static var systemPurple: Color {
-        Color(UIColor.systemPurple)
-    }
+    public static let systemBackground: Color = Color(UIColor.systemBackground)
 }

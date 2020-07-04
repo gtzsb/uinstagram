@@ -20,7 +20,7 @@ struct StoriesScroll: View {
                         Image("profile00").circleShaped()
                         
                         Image(systemName: "plus.circle.fill")
-                            .foregroundColor(.systemBlue)
+                            .foregroundColor(.blue)
                             .background(Color.systemBackground)
                             .font(.body)
                             .clipShape(Circle())

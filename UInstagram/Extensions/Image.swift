@@ -15,7 +15,7 @@ extension Image {
     
     func circleShapedWithGradientBorder() -> some View {
         let paddingValue: CGFloat = 3
-        let angularGradient = AngularGradient(gradient: Gradient(colors: [.systemOrange, .systemPurple, .systemOrange]), center: .center, angle: .degrees(135))
+        let angularGradient = AngularGradient(gradient: Gradient(colors: [.orange, .purple, .orange]), center: .center, angle: .degrees(135))
         return self.circleShaped().padding(paddingValue).overlay(Circle().strokeBorder(angularGradient, lineWidth: paddingValue - 1))
     }
 }
