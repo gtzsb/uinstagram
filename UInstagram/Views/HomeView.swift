@@ -18,7 +18,8 @@ struct HomeView: View {
                         ForEach(profiles) { profile in
                             StoryView(profile: profile)
                         }
-                    }.padding(.top, 10)
+                    }
+                    .padding(.top, 10)
                 }
                 Divider()
                 ForEach(posts) { post in
