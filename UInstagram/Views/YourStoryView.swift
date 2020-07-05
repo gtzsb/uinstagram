@@ -14,11 +14,11 @@ struct YourStoryView: View {
             ZStack(alignment: .bottomTrailing) {
                 ZStack {
                     Circle().fill(Color.systemBackground)
-                        .frame(width: 70, height: 70)
+                        .frame(width: 65, height: 65)
                     Image("profile00")
                         .resizable()
                         .clipShape(Circle())
-                        .frame(width: 65, height: 65)
+                        .frame(width: 55, height: 55)
                 }
                 ZStack {
                     Circle().fill(Color.systemBackground)

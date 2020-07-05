@@ -14,14 +14,16 @@ struct StoryView: View {
     
     var body: some View {
         VStack {
-            Image(profile.photo)
-                .resizable()
-                .clipShape(Circle())
-                .frame(width: 65, height: 65)
-                .overlay(Circle()
-                    .strokeBorder(Color.systemBackground, lineWidth: 5))
-                .overlay(Circle()
-                    .strokeBorder(gradient, lineWidth: 2.5))
+            ZStack {
+                Circle().fill(gradient)
+                    .frame(width: 65, height: 65)
+                Circle().fill(Color.systemBackground)
+                    .frame(width: 60, height: 60)
+                Image(profile.photo)
+                    .resizable()
+                    .clipShape(Circle())
+                    .frame(width: 55, height: 55)
+            }
             Text(profile.name)
                 .font(.footnote)
         }
