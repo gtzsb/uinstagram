@@ -26,7 +26,7 @@ struct HomeView: View {
                     PostView(post: post)
                 }
             }
-            .navigationBarTitle("Instagram", displayMode: .inline)
+            .navigationBarTitle("UInstagram", displayMode: .inline)
             .navigationBarItems(leading: Image(systemName: "camera"), trailing: Image(systemName: "paperplane"))
         }
         .navigationViewStyle(StackNavigationViewStyle())
