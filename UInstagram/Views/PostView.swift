@@ -47,7 +47,7 @@ struct PostView: View {
                 .padding(.horizontal)
             (Text(post.author.name)
                 .bold()
-                +  Text("\(post.description)"))
+                +  Text(" \(post.description)"))
                 .lineLimit(2)
                 .font(.subheadline)
                 .padding(.horizontal)
