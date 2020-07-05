@@ -14,17 +14,13 @@ struct HomeView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        YourStoryView()
-                            .padding(.horizontal)
+                        YourStoryView().padding(.leading)
                         ForEach(profiles) { profile in
                             StoryView(profile: profile)
                         }
-                        .padding(.horizontal)
-                    }
-                    .padding(.top)
+                    }.padding(.top, 10)
                 }
                 Divider()
-                    .padding(.vertical)
                 ForEach(posts) { post in
                     PostView(post: post)
                 }
