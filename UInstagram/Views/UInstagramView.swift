@@ -8,72 +8,39 @@
 
 import SwiftUI
 
+let posts = DataRepository.posts
+let profiles = DataRepository.profiles
+
 struct UInstagramView: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                Tabs()
-            }
-            .navigationBarTitle("UInstagram", displayMode: .inline)
-            .navigationBarItems(leading: Button(action: {
-                print("Tapped camera")
-            }) {
-                Image(systemName: "camera")
-            }
-            .foregroundColor(.primary), trailing: Button(action: {
-                print("Tapped paperplane")
-            }) {
-                Image(systemName: "paperplane")
-            }
-            .foregroundColor(.primary))
-        }
-            // Change Default Navigation View Style for iPad.
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-struct Tabs: View {
-    var body: some View {
         TabView {
-            PostsList()
-                .tabItem {
-                    Image(systemName: "house")
+            HomeView().tabItem {
+                Image(systemName: "house.fill")
             }
-            
-            Text("Search tab")
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
+            Text("Search").tabItem {
+                Image(systemName: "magnifyingglass")
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.yellow)
-            .edgesIgnoringSafeArea(.horizontal)
-            
-            Text("Add photo tab")
-                .tabItem {
-                    Image(systemName: "plus.square")
+            Text("Add content").tabItem {
+                Image(systemName: "plus.square")
             }
-            
-            Text("Favs tab")
-                .tabItem {
-                    Image(systemName: "heart")
+            Text("Favs").tabItem {
+                Image(systemName: "heart")
             }
-            
-            Text("My profile tab")
-                .tabItem {
-                    Image(systemName: "person")
+            Text("Profile").tabItem {
+                Image(systemName: "person")
             }
         }
         .accentColor(.primary)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct UInstagramView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             UInstagramView()
             UInstagramView()
-                .colorScheme(.dark)
-                .background(Color.black)
+                .preferredColorScheme(.dark)
         }
+        .previewDisplayName("UInstagram View")
     }
 }
