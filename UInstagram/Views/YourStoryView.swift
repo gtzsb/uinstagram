@@ -12,20 +12,24 @@ struct YourStoryView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {
-                Image("profile00")
-                    .resizable()
-                    .clipShape(Circle())
-                    .frame(width: 65, height: 65)
-                    .overlay(Circle()
-                        .strokeBorder(Color.systemBackground, lineWidth: 5))
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .foregroundColor(.blue)
-                    .background(Color.systemBackground)
-                    .clipShape(Circle())
-                    .frame(width: 17, height: 17)
-                    .overlay(Circle()
-                        .strokeBorder(Color.systemBackground, lineWidth: 2))
+                ZStack {
+                    Circle().fill(Color.systemBackground)
+                        .frame(width: 70, height: 70)
+                    Image("profile00")
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width: 65, height: 65)
+                }
+                ZStack {
+                    Circle().fill(Color.systemBackground)
+                        .frame(width: 19, height: 19)
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .foregroundColor(.blue)
+                        .background(Color.systemBackground)
+                        .clipShape(Circle())
+                        .frame(width: 17, height: 17)
+                }
             }
             Text("Your story")
                 .font(.footnote)
