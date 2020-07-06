@@ -25,7 +25,7 @@ struct StoryView: View {
                     .frame(width: 55, height: 55)
             }
             Text(profile.name)
-                .font(.footnote)
+                .font(.footnote).scaledToFit()
         }
     }
 }
