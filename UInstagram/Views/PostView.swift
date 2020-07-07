@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct PostView: View {
+    @State private var showActionSheet = false
     var post: Post
     
     var body: some View {
@@ -29,6 +30,9 @@ struct PostView: View {
                 }
                 Spacer()
                 Image(systemName: "ellipsis")
+                    .onTapGesture {
+                        self.showActionSheet = true
+                }
             }.padding(.horizontal)
             Image(post.photo)
                 .resizable()
@@ -51,6 +55,16 @@ struct PostView: View {
                 .lineLimit(2)
                 .font(.subheadline)
                 .padding(.horizontal)
+        }.actionSheet(isPresented: $showActionSheet) {
+            ActionSheet(title: Text("Please choose an action or cancel"), buttons: [
+                .destructive(Text("Report")),
+                .default(Text("Copy link").foregroundColor(Color.primary)),
+                .default(Text("Share to…")),
+                .default(Text("Turn on Post Notifications")),
+                .default(Text("Mute")),
+                .default(Text("Unfollow")),
+                .cancel()
+            ])
         }
     }
 }
