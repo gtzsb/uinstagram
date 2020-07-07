@@ -27,7 +27,8 @@ struct StoryView: View {
             }
             Text(profile.name)
                 .font(.footnote)
-                .scaledToFit()
+                .lineLimit(1)
+                .frame(width: 65, alignment: .center)
         }
     }
 }
