@@ -10,14 +10,15 @@ import SwiftUI
 
 struct StoryView: View {
     var profile: Profile
-    let gradient = AngularGradient(gradient: Gradient(colors: [.orange, .purple, .orange]), center: .center, angle: .degrees(135))
     
     var body: some View {
         VStack {
             ZStack {
-                Circle().fill(gradient)
+                Circle()
+                    .fill(LinearGradient(gradient: Constants.facebookGradient, startPoint: .bottomLeading, endPoint: .topTrailing))
                     .frame(width: 65, height: 65)
-                Circle().fill(Color.systemBackground)
+                Circle()
+                    .fill(Color.systemBackground)
                     .frame(width: 60, height: 60)
                 Image(profile.photo)
                     .resizable()
@@ -25,7 +26,8 @@ struct StoryView: View {
                     .frame(width: 55, height: 55)
             }
             Text(profile.name)
-                .font(.footnote).scaledToFit()
+                .font(.footnote)
+                .scaledToFit()
         }
     }
 }
